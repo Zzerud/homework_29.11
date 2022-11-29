@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By__ZzerudUwU</title>
+</head>
+<body style="display: flex; justify-content: center; background-color: rgb(140 234 242);">
+    <button id = "btn1">Entering a number</button>
+    <button id = "btn2">output numbers</button>
+    <textarea id = "txt" placeholder="Enter a number:"></textarea>
+
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let txt = document.getElementById("txt");
+
+        let arr = [];
+
+        btn1.onclick = function(){
+            arr.push(txt.value);
+        }
+        btn2.onclick = function() {
+            console.log(arr)
+            for(let i = 0; i < arr.length; i++)
+            sort(arr)
+        } 
+        function sort(array) {
+            let swapped;
+            do {
+                swapped = false;
+                
+                array.forEach((item, index) => {
+                if (item > array[index + 1]) {
+                    let temp = item;
+                    array[index] = array[index + 1];
+                    array[index + 1] = temp;
+                    swapped = true;
+                }
+                })
+            } while (swapped);
+            console.log(array);
+        }
+        
+        
+
+    </script>
+</body>
+</html>
